@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0px;
@@ -21,10 +30,17 @@ main {
 
     background-color: white;
     width: 550px;
-    height: 300px;
+    height: 115px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
     overflow: hidden;
+
+    transition: height .3s;
+    transition-timing-function: ease;
+}
+
+main.expanded {
+    height: 250px;
 }
 
 header {
@@ -32,6 +48,22 @@ header {
     text-align: center;
     padding: 10px;
     background-color: bisque;
+}
+
+section#quotetext {
+    animation: fadeInText 2s ease-in;
+}
+
+div#quote-container{
+    margin: 10px;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+div#author-container{
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 20px;
 }
 
 div#generate-quote{
@@ -43,7 +75,9 @@ div#generate-quote{
     text-align: center;
 
     background-color: rgba(255, 136, 0, 0.568);
-    padding: 10px 24.6%;
+    width: 550px;
+    padding: 10px 0px;
+    padding-left: 23.5%;
 }
 
 div#generate-quote:hover{
